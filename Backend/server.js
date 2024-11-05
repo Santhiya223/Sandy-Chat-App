@@ -5,8 +5,7 @@ import authRoutes from './routes/auth.routes.js';
 import connectToMongodb from './db/connectToMongodb.js';
 import messageRoutes from './routes/message.routes.js';
 import userRoutes from './routes/user.routes.js';
-
-const app = express();
+import {app, server} from './socket/socket.js';
 const PORT = process.env.PORT || 5000;
 
 dotenv.config();
@@ -22,7 +21,7 @@ app.use("/api/users",userRoutes);
 //     res.send("Hello world35");
 // });
 
-app.listen(PORT,()=> {
+server.listen(PORT,()=> {
     connectToMongodb();
     console.log(`Localhost running in port no : ${PORT}`)
 });
