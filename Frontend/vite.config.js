@@ -11,5 +11,8 @@ export default defineConfig({
         target:"http://localhost:5000"
       }
     }
+  },
+  build: {
+    outDir: 'dist' 
   }
 })
